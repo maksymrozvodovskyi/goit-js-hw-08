@@ -61,10 +61,6 @@ input {
 
 .gallery-item {
   width: calc((100% - 24px * 2) / 3);
-  /* display: flex; */
-}
-
-.gallery-link {
 }
 
 .gallery-image {

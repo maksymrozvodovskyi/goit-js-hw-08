@@ -65,7 +65,9 @@ const images = [
 ];
 
 const container = document.querySelector('.gallery');
+
 container.insertAdjacentHTML('beforeend', createMarkup(images));
+
 container.addEventListener('click', imageClick);
 
 function createMarkup(cards) {
@@ -86,7 +88,10 @@ function createMarkup(cards) {
 }
 
 function imageClick(event) {
-  if (event.target.nodeName !== 'BUTTON') {
-    return;
+  event.preventDefault();
+  if (event.target.nodeName === 'IMG') {
+    basicLightbox
+      .create(`<img src="${event.target.dataset.source}" style="width: 78vw">`)
+      .show();
   }
 }
